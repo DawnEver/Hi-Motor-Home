@@ -1,0 +1,16 @@
+export default {
+    label: 'English',
+    company: "Wuhan Voltworks S&T Ltd.",
+    home: "Home",
+    news: 'News',
+    product: 'Products',
+    wiki:"Wiki",
+    milestone: 'Milestones',
+    contact: 'Contact',
+    language: 'Language',
+    copyrights: "All Rights Reserved",
+    mission: 'New Generation of Motor Design',
+    collaborator: 'Collaborators',
+    contactUs: 'Contact Us',
+    learnMore: 'Learn More',
+}
