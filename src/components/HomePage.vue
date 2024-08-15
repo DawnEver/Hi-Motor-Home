@@ -2,7 +2,7 @@
     <ToolBar/>
     <Hero/>
     <Products/>
-    <Milestones/>
+    <!-- <Milestones/> -->
     <Collaborator/>
     <v-divider/>
     <Footer/>
