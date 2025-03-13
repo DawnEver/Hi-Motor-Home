@@ -8,7 +8,7 @@
 
             <v-menu open-on-hover transition="scale-transition">
                 <template v-slot:activator="{ props }">
-                    <v-btn v-bind="props">
+                    <v-btn v-bind="props" class="text-h5">
                         <p>{{ $t("product") }}</p>
                     </v-btn>
                 </template>

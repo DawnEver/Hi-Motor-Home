@@ -1,12 +1,12 @@
 <template>
   <v-sheet elevation="0" color="transparent" class="ml-2 my-10">
 
-    <h1 class="font-weight-black text-h3 pb-2" align="center">
+    <h1 class="font-weight-black text-h2 pb-2" align="center">
       {{ $t("product") }}
     </h1>
     <v-container>
       <v-tabs v-model="tab" color="primary">
-        <v-tab :value="product.id" v-for="product in products" :key="product.id">
+        <v-tab :value="product.id" v-for="product in products" :key="product.id" class="text-h4">
           <v-icon start>
             {{ product.icon }}
           </v-icon>
@@ -17,14 +17,14 @@
       <v-window v-model="tab">
         <v-window-item :value="product.id" v-for="product in products" :key="product.id">
           <v-card flat class="ml-10">
-            <v-card-text>
+            <v-card-text class="text-h6 text-center">
               <v-container align="center">
                 <img :src="product.imgUrl" width=100% />
               </v-container>
               {{ product.description }}
             </v-card-text>
             <v-card-actions>
-              <v-btn :href="product.href">{{ $t("learnMore") }}
+              <v-btn :href="product.href" class="text-h5">{{ $t("learnMore") }}
                 <v-icon>mdi-open-in-new</v-icon></v-btn>
             </v-card-actions>
           </v-card>
@@ -41,7 +41,7 @@ import { useI18n } from 'vue-i18n'
 
 const productHMDZh = "https://cdn.jsdelivr.net/gh/Hi-Motor/Images@main/hi-motor-designer/hmd_model_zh.jpg"
 const productHMDEn = "https://cdn.jsdelivr.net/gh/Hi-Motor/Images@main/hi-motor-designer/hmd_model_en.jpg"
-const productHMH = "https://cdn.jsdelivr.net/gh/Hi-Motor/Images@main/hi-motor-hub/hmh.jpg"
+const productHMH = "https://cdn.jsdelivr.net/gh/Hi-Motor/Images@main/hi-motor-hub/hmh.png"
 
 const { locale } = useI18n()
 const tab = ref('0')
