@@ -85,6 +85,12 @@ const markers = computed(() => {
                 content: '金奖争夺赛小组第一，入围晋级排位赛！',
                 link: 'https://news.hust.edu.cn/info/1002/53804.htm',
             },
+            {
+                marker: '2024年11月10日',
+                title: '第十七届全国大学生创新年会',
+                content: '获得“最佳创意项目”奖！',
+                link: 'https://seee.hust.edu.cn/info/1124/18328.htm',
+            },
         ]
     } else {
         return [
@@ -141,6 +147,12 @@ const markers = computed(() => {
                 title: 'National Gold Medal in the China International College Students Innovation Competition (2024)',
                 content: 'Ranked first in the group stage of the gold medal competition and advanced to the ranking round!',
                 link: 'https://news.hust.edu.cn/info/1002/53804.htm',
+            },
+            {
+                marker: 'November 10, 2024',
+                title: 'The 17th National College Students Innovation Annual Conference',
+                content: 'Won the "Best Creative Project" award!',
+                link: 'https://seee.hust.edu.cn/info/1124/18328.htm',
             },
         ]
     }
