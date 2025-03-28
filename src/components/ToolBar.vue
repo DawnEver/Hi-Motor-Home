@@ -8,13 +8,13 @@
 
             <v-menu open-on-hover transition="scale-transition">
                 <template v-slot:activator="{ props }">
-                    <v-btn v-bind="props" class="text-h5">
+                    <v-btn v-bind="props" :class="cardTitleClass">
                         <p>{{ $t("product") }}</p>
                     </v-btn>
                 </template>
                 <v-list bg-color="white">
                     <v-list-item v-for="(product, i) in products" :key="i" :href="product.link" target="_blanke">
-                        <v-list-item-title>{{ product.title }}</v-list-item-title>
+                        <v-list-item-title :class="itemTitleClass">{{ product.title }}</v-list-item-title>
                     </v-list-item>
                 </v-list>
             </v-menu>
@@ -30,7 +30,12 @@
 </template>
 
 <script setup lang="ts">
-
+import useResponsiveFonts from '@/composables/useResponsiveFonts';
+const { titleClass,
+    itemTitleClass,
+    cardTitleClass,
+    cardTextClass,
+    cardActionClass} = useResponsiveFonts();
 
 const products = [
     {

@@ -1,31 +1,40 @@
 <template>
-    <v-sheet elevation="0" color="transparent" class="mx-10 my-10">
-        <h1 class="font-weight-black text-h3 pb-2" align="center">
-            {{ $t("milestone") }}
-        </h1>
-        <v-timeline side="end">
-            <v-timeline-item v-for="(marker, i) in markers" :key="i" :dot-color="colors[i]" size="small">
-                <template v-slot:opposite>
-                    <div :class="`pt-1 headline font-weight-bold text-${colors[i]} text-h5`" v-text="marker.marker"></div>
-                </template>
-                <v-card hover :href="marker.link" target="_blanke">
-                    <v-card-title :class="`mt-n1 headline font-weight-bold text-${colors[i]} text-h5`">
-                        {{marker.title}}
-                    </v-card-title>
-                    <v-card-text v-if="marker.content !== ''" class="text-h6">
-                        {{marker.content}}
-                    </v-card-text>
-                </v-card>
-            </v-timeline-item>
-        </v-timeline>
-    </v-sheet>
+<v-sheet class="mx-10 my-10" >
+    <h1 :class="`${titleClass} font-weight-black`" align="center">
+        {{ $t("milestone") }}
+    </h1>
+    <v-timeline >
+        <v-timeline-item v-for="(marker, i) in markers" :key="i" :dot-color="colors[i]" size="small">
+            <template v-slot:opposite>
+                <div :class="`pt-1 headline font-weight-bold text-${colors[i]} ${itemTitleClass}`" v-text="marker.marker"></div>
+            </template>
+            <v-card hover :href="marker.link" target="_blanke">
+                <!-- <v-card-title :class="`mt-n1 headline font-weight-bold text-${colors[i]} ${cardTitleClass}`">
+                    {{marker.title}}
+                </v-card-title> -->
+                <v-card-text v-if="marker.content !== ''" :class="`${cardTextClass} text-${colors[i]}`">
+                    <strong>{{marker.title}}</strong><br>{{marker.content}}
+                </v-card-text>
+            </v-card>
+        </v-timeline-item>
+    </v-timeline>
+</v-sheet>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n' // 多语言
+
 const colors = ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue', 'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'blue-grey', 'grey'];
 const { locale } = useI18n();
+
+import useResponsiveFonts from '@/composables/useResponsiveFonts';
+const { titleClass,
+    itemTitleClass,
+    cardTitleClass,
+    cardTextClass,
+    cardActionClass } = useResponsiveFonts();
+
 
 const markers = computed(() => {
     const lang = locale.value;

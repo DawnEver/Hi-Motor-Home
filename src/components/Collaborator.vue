@@ -1,8 +1,8 @@
 
 <template>
-  <v-sheet elevation="0" color="transparent" class="mx-auto my-10">
+  <v-sheet class="mx-auto my-10">
 
-      <h1 class="font-weight-black text-h3 pb-2" align="center">
+      <h1 :class="`${titleClass} font-weight-black`" align="center">
         {{ $t("collaborator") }}
       </h1>
 
@@ -27,6 +27,14 @@ import hustSvg from "@/assets/hust.svg"
 import hustLightSvg from "@/assets/hust-light.svg"
 import regalSvg from "@/assets/regal.svg"
 import regalLightSvg from "@/assets/regal-light.svg"
+
+import useResponsiveFonts from '@/composables/useResponsiveFonts';
+const {titleClass,
+    itemTitleClass,
+    cardTitleClass,
+    cardTextClass,
+    cardActionClass} = useResponsiveFonts()
+
 const theme = useTheme()
 const logos = computed(() => {
   if (theme.global.name.value === 'light') {
