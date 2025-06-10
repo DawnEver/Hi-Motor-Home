@@ -10,12 +10,10 @@ export default function useResponsiveFonts() {
     isWeChat.value = ua.includes('micromessenger');
   });
 
-
-
-    const titleClass = computed(() => {
-        if (isWeChat.value) return 'text-h4'; // 微信端更小字体
-        if (smAndDown.value) return 'text-h6'; // 移动端（小屏幕）
-    return 'text-h2';// 电脑端（正常字体）
+  const titleClass = computed(() => {
+      if (isWeChat.value) return 'text-h4'; // 微信端更小字体
+      if (smAndDown.value) return 'text-h6'; // 移动端（小屏幕）
+  return 'text-h2';// 电脑端（正常字体）
   });
 
   const itemTitleClass = computed(() => {

@@ -2,7 +2,7 @@
     <v-card>
         <v-toolbar color="primary">
             <v-toolbar-title>
-                <img src="https://cdn.jsdelivr.net/gh/Hi-Motor/Images@main/logo-latest/hi-motor_02_white.svg" alt="logo" width="100"/>
+                <img src="https://oss.hi-motor.site/web/logo/hi-motor_white.svg" alt="logo" width="60"/>
             </v-toolbar-title>
             <v-spacer />
 
@@ -55,9 +55,9 @@ function toggleLanguage() {
     const nextLanguage = currentLanguage === "en" ? "zhHans" : "en";
     locale.value = nextLanguage;
     if (nextLanguage === "en") {
-        document.title = "Hi-Motor Product Site | Wuhan Voltworks S&T Ltd."
+        document.title = "Hi-Motor | Motor Design"
     } else {
-        document.title = "Hi-Motor 产品官方网站 | 武汉沃特沃克科技有限公司"
+        document.title = "Hi-Motor | 电机设计"
     }
 }
 import { useTheme } from 'vuetify'

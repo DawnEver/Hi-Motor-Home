@@ -23,10 +23,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useTheme } from 'vuetify'
-import hustSvg from "@/assets/hust.svg"
-import hustLightSvg from "@/assets/hust-light.svg"
-import regalSvg from "@/assets/regal.svg"
-import regalLightSvg from "@/assets/regal-light.svg"
+import hustFig from "@/assets/collaborator/hust.svg"
+import hustWhiteFig from "@/assets/collaborator/hust-white.svg"
+import marathonFig from "@/assets/collaborator/marathon.png"
+import marathonWhiteFig from "@/assets/collaborator/marathon-white.png"
+import nottinghamFig from "@/assets/collaborator/nottingham.png"
+import nottinghamWhiteFig from "@/assets/collaborator/nottingham-white.png"
 
 import useResponsiveFonts from '@/composables/useResponsiveFonts';
 const {titleClass,
@@ -42,13 +44,20 @@ const logos = computed(() => {
       {
         id: 1,
         name: "hust",
-        logoUrl: hustSvg,
-        link: "https://www.hust.edu.cn/",
-      },{
+        logoUrl: hustFig,
+        link: "https://www.hust.edu.cn",
+      },
+      {
         id: 2,
-        name: "regal",
-        logoUrl: regalSvg,
-        link: "https://www.regalrexnord.com/",
+        name: "marathon",
+        logoUrl: marathonFig,
+        link: "https://www.regalrexnord.com",
+      },
+      {
+        id: 3,
+        name: "nottingham",
+        logoUrl: nottinghamFig,
+        link: "https://www.nottingham.ac.uk",
       },
     ]
   }
@@ -57,13 +66,20 @@ const logos = computed(() => {
       {
         id: 1,
         name: "hust",
-        logoUrl: hustLightSvg,
-        link: "https://www.hust.edu.cn/",
-      },{
+        logoUrl: hustWhiteFig,
+        link: "https://www.hust.edu.cn",
+      },
+      {
         id: 2,
-        name: "regal",
-        logoUrl: regalLightSvg,
-        link: "https://www.regalrexnord.com/",
+        name: "marathon",
+        logoUrl: marathonWhiteFig,
+        link: "https://www.regalrexnord.com",
+      },
+      {
+        id: 3,
+        name: "nottingham",
+        logoUrl: nottinghamWhiteFig,
+        link: "https://www.nottingham.ac.uk",
       },
     ]
   }

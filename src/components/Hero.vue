@@ -12,10 +12,13 @@
 <script setup lang="ts">
 const slides = [
     {
-        imgUrl: "https://cdn.jsdelivr.net/gh/Hi-Motor/Images@main/cover-latest/cover_01.jpg",
+        imgUrl: "https://oss.hi-motor.site/web/cover/cover_01.jpg",
     },
     {
-        imgUrl: "https://cdn.jsdelivr.net/gh/Hi-Motor/Images@main/cover-latest/cover_02.jpg",
+        imgUrl: "https://oss.hi-motor.site/web/cover/cover_02.jpg",
+    },
+    {
+        imgUrl: "https://oss.hi-motor.site/web/cover/cover_03.jpg",
     },
 ]
 </script>

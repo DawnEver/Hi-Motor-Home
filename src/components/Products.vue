@@ -46,9 +46,9 @@ const { titleClass,
     cardActionClass } = useResponsiveFonts();
 
 // 产品图片
-const productHMDZh = "https://cdn.jsdelivr.net/gh/Hi-Motor/Images@main/hi-motor-designer/hmd_model_zh.jpg"
-const productHMDEn = "https://cdn.jsdelivr.net/gh/Hi-Motor/Images@main/hi-motor-designer/hmd_model_en.jpg"
-const productHMH = "https://cdn.jsdelivr.net/gh/Hi-Motor/Images@main/hi-motor-hub/hmh.png"
+const productHMDZh = "https://oss.hi-motor.site/web/hi-motor-designer/hmd_model_zh.jpg"
+const productHMDEn = "https://oss.hi-motor.site/web/hi-motor-designer/hmd_model_en.jpg"
+const productHMH = "https://oss.hi-motor.site/web/hi-motor-hub/hmh.png"
 
 
 const { locale } = useI18n()

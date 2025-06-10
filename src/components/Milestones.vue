@@ -3,40 +3,52 @@
     <h1 :class="`${titleClass} font-weight-black`" align="center">
         {{ $t("milestone") }}
     </h1>
-    <v-timeline >
-        <v-timeline-item v-for="(marker, i) in markers" :key="i" :dot-color="colors[i]" size="small">
-            <template v-slot:opposite>
-                <div :class="`pt-1 headline font-weight-bold text-${colors[i]} ${itemTitleClass}`" v-text="marker.marker"></div>
-            </template>
-            <v-card hover :href="marker.link" target="_blanke">
-                <!-- <v-card-title :class="`mt-n1 headline font-weight-bold text-${colors[i]} ${cardTitleClass}`">
-                    {{marker.title}}
-                </v-card-title> -->
-                <v-card-text v-if="marker.content !== ''" :class="`${cardTextClass} text-${colors[i]}`">
-                    <strong>{{marker.title}}</strong><br>{{marker.content}}
-                </v-card-text>
-            </v-card>
-        </v-timeline-item>
-    </v-timeline>
+    <v-infinite-scroll
+        color="secondary"
+        height="800px"
+        @load="load"
+    >
+      <template v-for="(milestone, i) in milestonesList" :key="i">
+        <v-row class="ma-0">
+            <v-col cols="12" md="3" class="py-0 d-flex justify-center">
+                <div :class="`pt-1 headline font-weight-bold text-${colors[i % colors.length]} ${itemTitleClass}`">
+                    {{ milestone.marker }}
+                </div>
+            </v-col>
+            <v-col cols="12" md="9" class="py-0">
+                <v-card
+                    hover
+                    class="mb-6"
+                    :href="milestone.link"
+                    target="_blank"
+                >
+                    <v-card-title :class="`mt-n1 headline font-weight-bold text-${colors[i % colors.length]} ${cardTitleClass}`">
+                        {{ milestone.title }}
+                    </v-card-title>
+                    <v-card-text v-if="milestone.content !== ''" :class="`${cardTextClass} text-${colors[i % colors.length]}`">
+                        {{ milestone.content }}
+                    </v-card-text>
+                </v-card>
+            </v-col>
+        </v-row>
+      </template>
+      <template #empty>
+        <div :class="`${cardTextClass}`">{{ $t("moreMilestones") }}</div>
+      </template>
+    </v-infinite-scroll>
 </v-sheet>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useI18n } from 'vue-i18n' // 多语言
-
-const colors = ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue', 'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'blue-grey', 'grey'];
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 const { locale } = useI18n();
-
 import useResponsiveFonts from '@/composables/useResponsiveFonts';
-const { titleClass,
-    itemTitleClass,
-    cardTitleClass,
-    cardTextClass,
-    cardActionClass } = useResponsiveFonts();
+const { titleClass, itemTitleClass, cardTitleClass, cardTextClass, cardActionClass } = useResponsiveFonts();
 
+const colors = ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue', 'light-blue', 'cyan', 'teal', 'green', 'amber', 'orange', 'deep-orange', 'brown', 'blue-grey', 'grey'];
 
-const markers = computed(() => {
+const milestones = computed(() => {
     const lang = locale.value;
     if (lang === "zhHans") {
         return [
@@ -60,7 +72,7 @@ const markers = computed(() => {
             },
             {
                 marker: '2024年1月4日',
-                title: '新的起点',
+                title: '新的尝试',
                 content: '成立武汉伏特沃克科技有限公司',
                 link: 'https://voltworks.cn',
             },
@@ -84,21 +96,33 @@ const markers = computed(() => {
             },
             {
                 marker: '2024年8月17日',
-                title: '“象新力杯”大学生电力创新设计竞赛全国特等奖',
-                content: '全场成绩第一！',
+                title: '“象新力杯”大学生电力创新设计竞赛',
+                content: '“象新力杯”大学生电力创新设计竞赛全国特等奖，全场成绩第一！',
                 link: 'https://mp.weixin.qq.com/s/GKNh5m0eaE8LiXhXewAHAg',
             },
             {
                 marker: '2024年10月15日',
-                title: '中国国际大学生创新大赛（2024）全国金奖',
-                content: '金奖争夺赛小组第一，入围晋级排位赛！',
+                title: '中国国际大学生创新大赛',
+                content: '中国国际大学生创新大赛（2024）全国金奖，金奖争夺赛小组第一，入围晋级排位赛！',
                 link: 'https://news.hust.edu.cn/info/1002/53804.htm',
             },
             {
                 marker: '2024年11月10日',
-                title: '第十七届全国大学生创新年会',
-                content: '获得“最佳创意项目”奖！',
+                title: '全国大学生创新年会',
+                content: '第十七届全国大学生创新年会获得“最佳创意项目”奖！',
                 link: 'https://seee.hust.edu.cn/info/1124/18328.htm',
+            },
+            {
+                marker: '2025年4月16日',
+                title: '示范性学生创新团队',
+                content: '入围华中科技大学年度示范性学生创新团队',
+                link: 'https://news.hust.edu.cn/info/1004/55100.htm',
+            },
+            {
+                marker: '2025年5月29日',
+                title: '挑战杯省赛',
+                content: '湖北省第十五届“挑战杯”大学生课外学术科技作品竞赛省赛一等奖',
+                link: 'https://mp.weixin.qq.com/s/GsOteUSmY6153bSX30SNDA',
             },
         ]
     } else {
@@ -147,25 +171,50 @@ const markers = computed(() => {
             },
             {
                 marker: 'August 17, 2024',
-                title: 'National Grand Prize in the "Xiangxinli Cup" College Student Electric Power Innovation Design Competition',
-                content: 'Ranked first overall!',
+                title: '“Xiangxinli Cup” National College Student Power Innovation Design Competition',
+                content: 'Won the national grand prize in the “Xiangxinli Cup” National College Student Power Innovation Design Competition, ranked first overall!',
                 link: 'https://mp.weixin.qq.com/s/GKNh5m0eaE8LiXhXewAHAg',
             },
             {
                 marker: 'October 15, 2024',
-                title: 'National Gold Medal in the China International College Students Innovation Competition (2024)',
-                content: 'Ranked first in the group stage of the gold medal competition and advanced to the ranking round!',
+                title: 'China International College Students’ Innovation Competition',
+                content: 'Won the national gold award in the China International College Students’ Innovation Competition (2024), ranked first in the group stage of the gold medal competition and advanced to the ranking round!',
                 link: 'https://news.hust.edu.cn/info/1002/53804.htm',
             },
             {
                 marker: 'November 10, 2024',
-                title: 'The 17th National College Students Innovation Annual Conference',
-                content: 'Won the "Best Creative Project" award!',
+                title: 'National College Student Innovation Annual Conference',
+                content: 'Won the "Best Creative Project" award at the 17th National College Student Innovation Annual Conference!',
                 link: 'https://seee.hust.edu.cn/info/1124/18328.htm',
+            },
+            {
+                marker: 'April 16, 2025',
+                title: 'Model Student Innovation Team',
+                content: 'Selected as the Model Student Innovation Team of the Year at Huazhong University of Science and Technology',
+                link: 'https://news.hust.edu.cn/info/1004/55100.htm',
+            },
+            {
+                marker: 'May 29, 2025',
+                title: 'First Prize in the Provincial Challenge Cup',
+                content: 'First Prize in the 15th Hubei Province "Challenge Cup" College Student Academic Science and Technology Works Competition',
+                link: 'https://mp.weixin.qq.com/s/GsOteUSmY6153bSX30SNDA',
             },
         ]
     }
 
     });
 
+const milestonesList = ref(milestones.value.slice(0, 6))
+
+function load({ done }: { done: (status: string) => void }) {
+  setTimeout(() => {
+    const next = milestones.value.slice(milestonesList.value.length, milestonesList.value.length + 6)
+    milestonesList.value.push(...next)
+    if (milestonesList.value.length >= milestones.value.length) {
+      done('empty')
+    } else {
+      done('ok')
+    }
+  }, 100)
+}
 </script>
