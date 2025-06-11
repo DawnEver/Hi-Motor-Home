@@ -3,8 +3,8 @@
     <Hero/>
     <Products/>
     <Milestones/>
-    <Member/>
-    <Collaborator/>
+    <Members/>
+    <Collaborators/>
     <v-divider/>
     <Footer/>
   </template>
@@ -14,8 +14,8 @@
   import Hero from '@/components/Hero.vue';
   import Products from '@/components/Products.vue';
   import Milestones from '@/components/Milestones.vue';
-  import Member from '@/components/Member.vue'
-  import Collaborator from '@/components/Collaborator.vue'
+  import Members from '@/components/Members.vue'
+  import Collaborators from '@/components/Collaborators.vue'
   import Footer from '@/components/Footer.vue';
   </script>
   

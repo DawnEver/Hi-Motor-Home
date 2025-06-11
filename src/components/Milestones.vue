@@ -217,4 +217,9 @@ function load({ done }: { done: (status: string) => void }) {
     }
   }, 100)
 }
+import { watch } from 'vue'
+watch(locale, () => {
+  milestonesList.value = milestones.value
+})
+
 </script>

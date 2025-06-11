@@ -7,11 +7,11 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Collaborator: typeof import('./src/components/Collaborator.vue')['default']
+    Collaborators: typeof import('./src/components/Collaborators.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Hero: typeof import('./src/components/Hero.vue')['default']
     HomePage: typeof import('./src/components/HomePage.vue')['default']
-    Member: typeof import('./src/components/Member.vue')['default']
+    Members: typeof import('./src/components/Members.vue')['default']
     Milestones: typeof import('./src/components/Milestones.vue')['default']
     Products: typeof import('./src/components/Products.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

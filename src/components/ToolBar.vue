@@ -20,10 +20,10 @@
             </v-menu>
 
             <v-btn @click="toggleLanguage">
-                <v-icon size="medium">mdi-translate</v-icon>
+                <v-icon>mdi-translate</v-icon>
             </v-btn>
             <v-btn @click="toggleTheme">
-                <v-icon size="medium">mdi-theme-light-dark</v-icon>
+                <v-icon>mdi-theme-light-dark</v-icon>
             </v-btn>
         </v-toolbar>
     </v-card>

@@ -46,9 +46,9 @@ const { titleClass,
     cardActionClass } = useResponsiveFonts();
 
 // 产品图片
-const productHMDZh = "https://oss.hi-motor.site/web/hi-motor-designer/hmd_model_zh.jpg"
-const productHMDEn = "https://oss.hi-motor.site/web/hi-motor-designer/hmd_model_en.jpg"
-const productHMH = "https://oss.hi-motor.site/web/hi-motor-hub/hmh.png"
+import productHMDZh from "@/assets/products/hi-motor-designer/hmd_model_zh.jpg"
+import productHMDEn from "@/assets/products/hi-motor-designer/hmd_model_en.jpg"
+import productHMH from "@/assets/products/hi-motor-hub/hmh_zh.png"
 
 
 const { locale } = useI18n()

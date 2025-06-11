@@ -5,7 +5,7 @@ export default {
     moreMilestones: 'More Milestones Are Coming Soon!',
     language: 'Language',
     copyrights: "All Rights Reserved",
-    member:"Team Members",
+    member:"Members",
     moreMembers: 'Join the Hi-Motor Team!',
     collaborator: 'Collaborators',
     learnMore: 'Learn More',

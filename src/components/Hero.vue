@@ -10,15 +10,18 @@
 </template>
 
 <script setup lang="ts">
+import cover_01 from "@/assets/hero/cover_01.jpg";
+import cover_02 from "@/assets/hero/cover_02.jpg";
+import cover_03 from "@/assets/hero/cover_03.jpg";
 const slides = [
     {
-        imgUrl: "https://oss.hi-motor.site/web/cover/cover_01.jpg",
+        imgUrl: cover_01,
     },
     {
-        imgUrl: "https://oss.hi-motor.site/web/cover/cover_02.jpg",
+        imgUrl: cover_02,
     },
     {
-        imgUrl: "https://oss.hi-motor.site/web/cover/cover_03.jpg",
+        imgUrl: cover_03,
     },
 ]
 </script>

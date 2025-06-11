@@ -23,7 +23,7 @@
               <v-card-title :class="`headline font-weight-bold ${cardTitleClass}`">
                 <a v-if="member.link" :href="member.link" target="_blank" style="text-decoration:none; color:inherit;">
                   {{ member.name }}
-                  <v-icon small class="ml-1">mdi-open-in-new</v-icon>
+                  <v-icon size="x-small">mdi-open-in-new</v-icon>
                 </a>
                 <span v-else>{{ member.name }}</span>
               </v-card-title>
@@ -38,7 +38,7 @@
         </v-row>
       </v-container>
       <template #empty>
-        <div class="text-center pa-4">{{ $t("moreMembers") }}</div>
+        <div :class="`${cardTextClass}`">{{ $t("moreMembers") }}</div>
       </template>
     </v-infinite-scroll>
   </v-sheet>
@@ -59,7 +59,7 @@ const members = computed(() => {
       {
         name: '包铭阳',
         role: '联合创始人',
-        content: 'University of Nottingham, EE PhD(2025.10)',
+        content: '诺丁汉大学电气与电子工程学院博士(2025.10)',
         link: 'https://www.baomingyang.site',
       },
       {
@@ -115,7 +115,7 @@ const members = computed(() => {
       {
         name: '卢舒愉',
         role: '团队成员',
-        content: 'Nanyang University of Technology, CS PhD(2025.10)',
+        content: '南洋理工大学计算机学院博士(2025.10)',
         link: 'https://lushuyu.site',
       },
       {
@@ -300,16 +300,258 @@ const members = computed(() => {
       }
     ]
   } else {
-    return []
+    return [
+      {
+      name: 'Mingyang Bao',
+      role: 'Cofounder',
+      content: 'University of Nottingham, SEE PhD(2025.10)',
+      link: 'https://www.baomingyang.site',
+      },
+      {
+      name: 'Junhao Li',
+      role: 'Cofounder',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE M.E(2025.10)',
+      },
+      {
+      name: 'Siyuan Feng',
+      role: 'Cofounder',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE M.E(2025.10)',
+      },
+      {
+      name: 'Tingke He',
+      role: 'Cofounder',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE M.E(2025.10)',
+      },
+      {
+      name: 'Yawei Wang',
+      role: 'Cofounder&Adviser',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE Associate Professor(2025.6)',
+      link: 'http://faculty.hust.edu.cn/WANGYAWEI/en/index.htm',
+      },
+      {
+      name: 'Xiuhao Ding',
+      role: 'Adviser',
+      content: 'Huazhong Univ. of Sci. & Tech., SME Professor(2025.6)',
+      link: 'https://cm.hust.edu.cn/info/1750/24555.htm',
+      },
+      {
+      name: 'Dawei Li',
+      role: 'Adviser',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE Professor(2025.6)',
+      link: 'http://faculty.hust.edu.cn/lidawei/en/index.htm',
+      },
+      {
+      name: 'Ronghai Qu',
+      role: 'Adviser',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE Professor(2025.6)',
+      link: 'http://faculty.hust.edu.cn/quronghai/en/index.htm',
+      },
+      {
+      name: 'Ping Wei',
+      role: 'Adviser',
+      content: 'Huazhong Univ. of Sci. & Tech., SME Professor(2025.6)',
+      link: 'https://baike.baidu.com/item/卫平/4124575',
+      },
+      {
+      name: 'Deshui Yu',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SME B.B.A(2025.6)',
+      },
+      {
+      name: 'Shuyu Lu',
+      role: 'Member',
+      content: 'Nanyang University of Technology, CS PhD(2025.10)',
+      link: 'https://lushuyu.site',
+      },
+      {
+      name: 'Kanran Yang',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SME M.B.A(2025.10)',
+      },
+      {
+      name: 'Chenshen Mao',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.6)',
+      },
+      {
+      name: 'Yishuai Tu',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE M.E(2025.10)',
+      },
+      {
+      name: 'Yujie Liu',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Yuhuan Tang',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Kaiyi Zhu',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Gong Chen',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Aojun Liu',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Haoke Zhou',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Weining Dong',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Yuyi Lü',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SME B.B.A(2025.10)',
+      },
+      {
+      name: 'Tian Zhang',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., S.Law B.Law(2025.6)',
+      },
+      {
+      name: 'Yuwen Luo',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., S.Journal B.A(2025.10)',
+      },
+      {
+      name: 'Jiayi Liu',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SME B.Com(2025.10)',
+      },
+      {
+      name: 'Jidong Chen',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Wenbo Wu',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Yichen Xiong',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Mingyuan Hao',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Jianping Huang',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Yayi Xiao',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Jiahao Huang',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Yilu Zhang',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Kechun Wang',
+      role: 'Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE B.E(2025.10)',
+      },
+      {
+      name: 'Hongyuan Liang',
+      role: 'Honorary Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE PhD(2025.10)',
+      },
+      {
+      name: 'Yuhang Cheng',
+      role: 'Honorary Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE M.E(2024.6)',
+      },
+      {
+      name: 'Xuan Li',
+      role: 'Honorary Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE M.E(2024.6)',
+      },
+      {
+      name: 'Yuanjian Chen',
+      role: 'Honorary Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE M.E(2025.6)',
+      },
+      {
+      name: 'Yeming Zheng',
+      role: 'Honorary Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE PhD(2025.6)',
+      },
+      {
+      name: 'Wutao Chen',
+      role: 'Honorary Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE M.E(2025.6)',
+      },
+      {
+      name: 'Yue Tang',
+      role: 'Honorary Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE M.E(2025.6)',
+      },
+      {
+      name: 'Yinjie He',
+      role: 'Honorary Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE M.E(2025.6)',
+      },
+      {
+      name: 'Chen Zhang',
+      role: 'Honorary Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE PhD(2025.6)',
+      },
+      {
+      name: 'Chong Ma',
+      role: 'Honorary Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE M.E(2025.10)',
+      },
+      {
+      name: 'Wenyang Li',
+      role: 'Honorary Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE M.E(2025.10)',
+      },
+      {
+      name: 'Minxuan Xu',
+      role: 'Honorary Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE M.E(2025.10)',
+      },
+      {
+      name: 'Fulin Zhou',
+      role: 'Honorary Member',
+      content: 'Huazhong Univ. of Sci. & Tech., SEE PhD(2025.10)',
+      }
+    ]
   }
 });
-
-const membersList = ref(members.value.slice(0, 9))
+const membersList = ref(members.value.slice(0, 12))
 
 function load({ done }: { done: (status: string) => void }) {
   setTimeout(() => {
     // 每次加载成员，直到全部加载完
-    const next = members.value.slice(membersList.value.length, membersList.value.length + 9)
+    const next = members.value.slice(membersList.value.length, membersList.value.length + 12)
     membersList.value.push(...next)
     if (membersList.value.length >= members.value.length) {
       done('empty')
@@ -318,4 +560,10 @@ function load({ done }: { done: (status: string) => void }) {
     }
   }, 100)
 }
+
+// 监听语言切换，重置membersList
+import { watch } from 'vue'
+watch(locale, () => {
+  membersList.value = members.value
+})
 </script>

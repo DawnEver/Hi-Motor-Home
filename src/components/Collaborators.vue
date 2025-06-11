@@ -23,12 +23,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useTheme } from 'vuetify'
-import hustFig from "@/assets/collaborator/hust.svg"
-import hustWhiteFig from "@/assets/collaborator/hust-white.svg"
-import marathonFig from "@/assets/collaborator/marathon.png"
-import marathonWhiteFig from "@/assets/collaborator/marathon-white.png"
-import nottinghamFig from "@/assets/collaborator/nottingham.png"
-import nottinghamWhiteFig from "@/assets/collaborator/nottingham-white.png"
+import hustFig from "@/assets/collaborators/hust.svg"
+import hustWhiteFig from "@/assets/collaborators/hust-white.svg"
+import marathonFig from "@/assets/collaborators/marathon.png"
+import marathonWhiteFig from "@/assets/collaborators/marathon-white.png"
+import nottinghamFig from "@/assets/collaborators/nottingham.png"
+import nottinghamWhiteFig from "@/assets/collaborators/nottingham-white.png"
 
 import useResponsiveFonts from '@/composables/useResponsiveFonts';
 const {titleClass,
