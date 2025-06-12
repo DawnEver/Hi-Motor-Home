@@ -27,9 +27,8 @@
             <a href="mailto:hi.motor.cn@gmail.com" rel="noreferrer" target="_blank">hi.motor.cn@gmail.com</a>
           <div v-if="$i18n.locale === 'zhHans'">
             <img src="@/assets/footer/mps.png" height="12pt">
-            <!-- <a href="https://beian.mps.gov.cn/#/query/webSearch?code=42018502007318" rel="noreferrer"
-              target="_blank">鄂公网安备42018502007306</a>
-            <br /> -->
+            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=32118202001102" rel="noreferrer" target="_blank">苏公网安备32118202001102号</a>
+            <br />
             <a href="https://beian.miit.gov.cn/">苏ICP备2025180711号</a>
           </div>
           </p>
