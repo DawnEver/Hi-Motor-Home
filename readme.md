@@ -1,5 +1,5 @@
 # Hi-Motor HomePage
 
 # Tech Stack
-Node 20.^
+Node 24.^
 Vue3 + vuetify + typescript

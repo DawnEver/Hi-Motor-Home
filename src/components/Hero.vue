@@ -13,6 +13,7 @@
 import cover_01 from "@/assets/hero/cover_01.jpg";
 import cover_02 from "@/assets/hero/cover_02.jpg";
 import cover_03 from "@/assets/hero/cover_03.jpg";
+import cover_04 from "@/assets/hero/cover_04.jpg";
 const slides = [
     {
         imgUrl: cover_01,
@@ -22,6 +23,9 @@ const slides = [
     },
     {
         imgUrl: cover_03,
+    },
+        {
+        imgUrl: cover_04,
     },
 ]
 </script>
