@@ -59,7 +59,7 @@ function toggleLanguage() {
     locale.value = nextLanguage;
     if (nextLanguage === "en") {
         document.title = "Hi-Motor | Motor Design"
-        router.push('/en');
+        router.push('/#en');
     } else {
         document.title = "Hi-Motor | 电机设计"
         router.push('/');
@@ -80,7 +80,7 @@ const route = useRoute();
 watch(
     () => route.path,
     (newPath) => {
-        if (newPath.startsWith('/en')) {
+        if (newPath.startsWith('/#en')) {
             locale.value = 'en';
             document.title = "Hi-Motor | Motor Design";
         } else {
