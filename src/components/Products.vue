@@ -15,7 +15,7 @@
       </v-tabs>
       <v-window v-model="tab">
         <v-window-item :value="product.id" v-for="product in products" :key="product.id">
-          <v-card flat >
+          <v-card flat>
             <v-card-text :class="cardTextClass">
               <v-container align="center">
                 <img :src="product.imgUrl" width=100% />
@@ -29,8 +29,8 @@
           </v-card>
         </v-window-item>
       </v-window>
-  </v-container>
-</v-sheet>
+    </v-container>
+  </v-sheet>
 </template>
 
 <script setup lang="ts">
@@ -40,10 +40,10 @@ import { useI18n } from 'vue-i18n'
 
 import useResponsiveFonts from '@/composables/useResponsiveFonts';
 const { titleClass,
-    itemTitleClass,
-    cardTitleClass,
-    cardTextClass,
-    cardActionClass } = useResponsiveFonts();
+  itemTitleClass,
+  cardTitleClass,
+  cardTextClass,
+  cardActionClass } = useResponsiveFonts();
 
 // 产品图片
 import productHMDZh from "@/assets/products/hi-motor-designer/hmd_model_zh.jpg"

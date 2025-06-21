@@ -1,42 +1,36 @@
 <template>
-<v-sheet class="mx-10 my-10" >
-    <h1 :class="`${titleClass} font-weight-black`" align="center">
-        {{ $t("milestone") }}
-    </h1>
-    <v-infinite-scroll
-        color="secondary"
-        height="800px"
-        @load="load"
-    >
-      <template v-for="(milestone, i) in milestonesList" :key="i">
-        <v-row class="ma-0">
-            <v-col cols="12" md="3" class="py-0 d-flex justify-center">
-                <div :class="`pt-1 headline font-weight-bold text-${colors[i % colors.length]} ${itemTitleClass}`">
-                    {{ milestone.marker }}
-                </div>
-            </v-col>
-            <v-col cols="12" md="9" class="py-0">
-                <v-card
-                    hover
-                    class="mb-6"
-                    :href="milestone.link"
-                    target="_blank"
-                >
-                    <v-card-title :class="`mt-n1 headline font-weight-bold text-${colors[i % colors.length]} ${cardTitleClass}`">
-                        {{ milestone.title }}
-                    </v-card-title>
-                    <v-card-text v-if="milestone.content !== ''" :class="`${cardTextClass} text-${colors[i % colors.length]}`">
-                        {{ milestone.content }}
-                    </v-card-text>
-                </v-card>
-            </v-col>
-        </v-row>
-      </template>
-      <template #empty>
-        <div :class="`${cardTextClass}`">{{ $t("moreMilestones") }}</div>
-      </template>
-    </v-infinite-scroll>
-</v-sheet>
+    <v-sheet class="mx-10 my-10">
+        <h1 :class="`${titleClass} font-weight-black`" align="center">
+            {{ $t("milestone") }}
+        </h1>
+        <v-infinite-scroll color="secondary" height="800px" @load="load">
+            <template v-for="(milestone, i) in milestonesList" :key="i">
+                <v-row class="ma-0">
+                    <v-col cols="12" md="3" class="py-0 d-flex justify-center">
+                        <div
+                            :class="`pt-1 headline font-weight-bold text-${colors[i % colors.length]} ${itemTitleClass}`">
+                            {{ milestone.marker }}
+                        </div>
+                    </v-col>
+                    <v-col cols="12" md="9" class="py-0">
+                        <v-card hover class="mb-6" :href="milestone.link" target="_blank">
+                            <v-card-title
+                                :class="`mt-n1 headline font-weight-bold text-${colors[i % colors.length]} ${cardTitleClass}`">
+                                {{ milestone.title }}
+                            </v-card-title>
+                            <v-card-text v-if="milestone.content !== ''"
+                                :class="`${cardTextClass} text-${colors[i % colors.length]}`">
+                                {{ milestone.content }}
+                            </v-card-text>
+                        </v-card>
+                    </v-col>
+                </v-row>
+            </template>
+            <template #empty>
+                <div :class="`${cardTextClass}`">{{ $t("moreMilestones") }}</div>
+            </template>
+        </v-infinite-scroll>
+    </v-sheet>
 </template>
 
 <script setup lang="ts">
@@ -202,24 +196,24 @@ const milestones = computed(() => {
         ]
     }
 
-    });
+});
 
 const milestonesList = ref(milestones.value.slice(0, 6))
 
 function load({ done }: { done: (status: string) => void }) {
-  setTimeout(() => {
-    const next = milestones.value.slice(milestonesList.value.length, milestonesList.value.length + 6)
-    milestonesList.value.push(...next)
-    if (milestonesList.value.length >= milestones.value.length) {
-      done('empty')
-    } else {
-      done('ok')
-    }
-  }, 100)
+    setTimeout(() => {
+        const next = milestones.value.slice(milestonesList.value.length, milestonesList.value.length + 6)
+        milestonesList.value.push(...next)
+        if (milestonesList.value.length >= milestones.value.length) {
+            done('empty')
+        } else {
+            done('ok')
+        }
+    }, 100)
 }
 import { watch } from 'vue'
 watch(locale, () => {
-  milestonesList.value = milestones.value
+    milestonesList.value = milestones.value
 })
 
 </script>

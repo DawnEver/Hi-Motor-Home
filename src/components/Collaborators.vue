@@ -1,21 +1,17 @@
-
 <template>
   <v-sheet class="mx-auto my-10">
 
-      <h1 :class="`${titleClass} font-weight-black`" align="center">
-        {{ $t("collaborator") }}
-      </h1>
+    <h1 :class="`${titleClass} font-weight-black`" align="center">
+      {{ $t("collaborator") }}
+    </h1>
 
-      <v-row align="center" justify="center">
-        <v-col sm="6" md="4" lg="3" v-for="logo in logos">
-          <v-card 
-          flat
-          :href="logo.link"
-          >
-            <v-img height="60" :src="logo.logoUrl"/>
-          </v-card>
-        </v-col>
-      </v-row>
+    <v-row align="center" justify="center">
+      <v-col sm="6" md="4" lg="3" v-for="logo in logos">
+        <v-card flat :href="logo.link">
+          <v-img height="60" :src="logo.logoUrl" />
+        </v-card>
+      </v-col>
+    </v-row>
   </v-sheet>
 </template>
 
@@ -31,11 +27,11 @@ import nottinghamFig from "@/assets/collaborators/nottingham.png"
 import nottinghamWhiteFig from "@/assets/collaborators/nottingham-white.png"
 
 import useResponsiveFonts from '@/composables/useResponsiveFonts';
-const {titleClass,
-    itemTitleClass,
-    cardTitleClass,
-    cardTextClass,
-    cardActionClass} = useResponsiveFonts()
+const { titleClass,
+  itemTitleClass,
+  cardTitleClass,
+  cardTextClass,
+  cardActionClass } = useResponsiveFonts()
 
 const theme = useTheme()
 const logos = computed(() => {

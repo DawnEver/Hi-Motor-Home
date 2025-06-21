@@ -3,22 +3,10 @@
     <h1 :class="`${titleClass} font-weight-black`" align="center">
       {{ $t("member") }}
     </h1>
-    <v-infinite-scroll
-      color="secondary"
-      height="800px"
-      @load="load"
-    >
+    <v-infinite-scroll color="secondary" height="800px" @load="load">
       <v-container>
         <v-row>
-            <v-col
-            v-for="(member, i) in membersList"
-            :key="i"
-            cols="12"
-            sm="6"
-            md="4"
-            lg="3"
-            xl="2"
-            >
+          <v-col v-for="(member, i) in membersList" :key="i" cols="12" sm="6" md="4" lg="3" xl="2">
             <v-card hover class="mb-6">
               <v-card-title :class="`headline font-weight-bold ${cardTitleClass}`">
                 <a v-if="member.link" :href="member.link" target="_blank" style="text-decoration:none; color:inherit;">
@@ -47,7 +35,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import useResponsiveFonts from '@/composables/useResponsiveFonts';
-const {titleClass, itemTitleClass, cardTitleClass, cardTextClass, cardActionClass} = useResponsiveFonts()
+const { titleClass, itemTitleClass, cardTitleClass, cardTextClass, cardActionClass } = useResponsiveFonts()
 
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n();

@@ -2,10 +2,15 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [{
     path: '/',
     name: "Home",
-    component: ()=> import('@/components/HomePage.vue')
+    component: () => import('@/components/HomePage.vue')
 },
 {
-    path:"/:catchAll(.*)",
+    path: '/en',
+    name: "HomeEn",
+    component: () => import('@/components/HomePage.vue'),
+},
+{
+    path: "/:catchAll(.*)",
     name: "Other",
     redirect: '/'
 },
