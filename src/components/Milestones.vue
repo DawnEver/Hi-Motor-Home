@@ -49,12 +49,12 @@ const milestones = computed(() => {
             {
                 marker: '2021年9月',
                 title: '梦开始的地方',
-                content: '几名来自华科电气2102班的学生和他们的教师班主任一拍即合。',
+                content: '几名来自华科电气2102班的学生和他们的教师班主任在华科相遇。',
                 link: '',
             },
             {
-                marker: '2022年3月18日',
-                title: '4 + 1 创始团队',
+                marker: '2022年3月17-18日',
+                title: '一拍即合! 4 + 1 创始团队',
                 content: '开始开发 Hi-Motor Designer Demo 版。',
                 link: '',
             },
@@ -128,7 +128,7 @@ const milestones = computed(() => {
                 link: '',
             },
             {
-                marker: 'March 18, 2022',
+                marker: 'March 17-18, 2022',
                 title: '4 + 1 Founding Team',
                 content: 'Started developing the Hi-Motor Designer Demo version.',
                 link: '',
