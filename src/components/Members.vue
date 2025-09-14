@@ -104,7 +104,7 @@ const members = computed(() => {
         name: '卢舒愉',
         role: '团队成员',
         content: '新加坡国立大学计算机学院25级博士(updated 2025.10)',
-        link: 'https://lushuyu.site',
+        link: 'https://www.comp.nus.edu.sg/~e1376036/Shuyu/',
       },
       {
         name: '杨堪然',
@@ -364,7 +364,7 @@ const members = computed(() => {
         name: 'Lu Shuyu',
         role: 'Team Member',
         content: 'PhD student at National University of Singapore, School of Computer Science (updated 2025.10)',
-        link: 'https://lushuyu.site',
+        link: 'https://www.comp.nus.edu.sg/~e1376036/Shuyu/',
       },
       {
         name: 'Yang Kanran',
